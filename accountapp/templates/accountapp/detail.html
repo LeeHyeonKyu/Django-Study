@@ -1,7 +1,6 @@
 <!-- djangostudy/accountapp/temlates/accountapp/detail.html -->
 
 {% extends 'base.html' %}
-{% load bootstrap4 %}
 
 {% block content %}
 
@@ -13,6 +12,15 @@
           <h2 style="font-family: 'NanumSqareB'">
               {{ target_user.username }}
           </h2>
+
+          {% if target_user == user %}
+          <a href="{% url 'accountapp:update' pk=user.pk %} ">
+              <p>
+                  Change Info
+              </p>
+          </a>
+          {% endif %}
+
       </div>
     </div>
 
