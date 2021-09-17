@@ -1,7 +1,6 @@
-<!-- djangostudy/accountapp/temlates/accountapp/create.html -->
+<!-- djangostudy/accountapp/temlates/accountapp/delete.html -->
 
 {% extends 'base.html' %}
-{% load bootstrap4 %}
 
 {% block content %}
 
@@ -9,9 +8,8 @@
         <div class="mb-4">
             <h4>Quit</h4>
         </div>
-        <form action="{% url 'accountapp:create' %}" method="post">
+        <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
             {% csrf_token %}
-            {% bootstrap_form form %}
             <input type="submit" class="btn btn-danger rounded-pill col-6 mt-3">
         </form>
     </div>
